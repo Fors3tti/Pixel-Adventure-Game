@@ -232,6 +232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 12
+  doubleJumpForce: 10
+  canDoubleJump: 1
   groundCheckDistance: 0.8
   whatIsGround:
     serializedVersion: 2
