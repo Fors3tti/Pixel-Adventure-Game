@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,9 +15,11 @@ public class Player : MonoBehaviour
 
     [Header("Collision info")]
     [SerializeField] private float groundCheckDistance;
+    [SerializeField] private float wallCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
     private bool isGrounded;
     private bool isAirborne;
+    private bool isWallDetected;
 
     private float xInput;
 
@@ -35,9 +38,18 @@ public class Player : MonoBehaviour
 
         HandleCollision();
         HandleInput();
+        HandleWallSlide();
         HandleMovement();
         HandleFlip();
         HandleAnimations();
+    }
+
+    private void HandleWallSlide()
+    {
+        if (isWallDetected && rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
+        }
     }
 
     private void UpdateAirbornStatus()
@@ -89,7 +101,10 @@ public class Player : MonoBehaviour
 
     private void HandleCollision()
     {
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
+        isGrounded = Physics2D.Raycast(transform.position, 
+            Vector2.down, groundCheckDistance, whatIsGround);
+        isWallDetected = Physics2D.Raycast(transform.position, 
+            Vector2.right * facingDir, wallCheckDistance, whatIsGround);
     }
 
     private void HandleAnimations()
@@ -97,6 +112,7 @@ public class Player : MonoBehaviour
         anim.SetFloat("xVelocity", rb.linearVelocity.x);
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isWallDetected", isWallDetected);
     }
 
     private void HandleMovement()
@@ -123,5 +139,7 @@ public class Player : MonoBehaviour
     {
         Gizmos.DrawLine(transform.position, new Vector2(
             transform.position.x, transform.position.y - groundCheckDistance));
+        Gizmos.DrawLine(transform.position, new Vector2(
+            transform.position.x + (wallCheckDistance * facingDir), transform.position.y));
     }
 }
