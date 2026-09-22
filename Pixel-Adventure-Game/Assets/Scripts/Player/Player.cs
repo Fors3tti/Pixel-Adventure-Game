@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private bool isWallDetected;
 
     private float xInput;
+    private float yInput;
 
     private bool facingRight = true;
     private int facingDir = 1;
@@ -36,20 +37,24 @@ public class Player : MonoBehaviour
     {
         UpdateAirbornStatus();
 
-        HandleCollision();
         HandleInput();
         HandleWallSlide();
         HandleMovement();
         HandleFlip();
+        HandleCollision();
         HandleAnimations();
     }
 
     private void HandleWallSlide()
     {
-        if (isWallDetected && rb.linearVelocity.y < 0)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
-        }
+        bool canWallSlide = isWallDetected && rb.linearVelocity.y < 0;
+        float yModifier = yInput < 0 ? 1 : .05f;
+
+        if (canWallSlide == false)
+            return;
+
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * yModifier);
+        
     }
 
     private void UpdateAirbornStatus()
@@ -75,6 +80,7 @@ public class Player : MonoBehaviour
     private void HandleInput()
     {
         xInput = Input.GetAxisRaw("Horizontal");
+        yInput = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKeyDown(KeyCode.X))
             JumpButton();
@@ -117,12 +123,15 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
+        if (isWallDetected)
+            return;
+
         rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
     }
 
     private void HandleFlip()
     {
-        if (rb.linearVelocity.x < 0 && facingRight || rb.linearVelocity.x > 0 && !facingRight)
+        if (xInput < 0 && facingRight || xInput > 0 && !facingRight)
         {
             Flip();
         }
