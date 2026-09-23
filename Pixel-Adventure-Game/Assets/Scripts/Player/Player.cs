@@ -10,8 +10,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float doubleJumpForce;
-
     public bool canDoubleJump;
+
+    [Header("Wall interactions")]
+    [SerializeField] private float wallJumpDuration = .6f;
+    [SerializeField] private Vector2 wallJumpForce;
+    private bool isWallJumping;
 
     [Header("Collision info")]
     [SerializeField] private float groundCheckDistance;
@@ -92,6 +96,10 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
+        else if (isWallDetected)
+        {
+            WallJump();
+        }
         else if (canDoubleJump)
         {
             DoubleJump();
@@ -103,6 +111,12 @@ public class Player : MonoBehaviour
     {
         canDoubleJump = false;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpForce);
+    }
+
+    private void WallJump()
+    {
+        isWallJumping = true;
+        rb.linearVelocity = new Vector2(wallJumpForce.x * -facingDir, wallJumpForce.y);
     }
 
     private void HandleCollision()
@@ -124,6 +138,9 @@ public class Player : MonoBehaviour
     private void HandleMovement()
     {
         if (isWallDetected)
+            return;
+
+        if (isWallJumping)
             return;
 
         rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
