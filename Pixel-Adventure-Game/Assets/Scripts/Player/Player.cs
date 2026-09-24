@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -96,7 +97,7 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-        else if (isWallDetected)
+        else if (isWallDetected && !isGrounded)
         {
             WallJump();
         }
@@ -109,14 +110,29 @@ public class Player : MonoBehaviour
     private void Jump() => rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     private void DoubleJump()
     {
+        isWallJumping = false;
         canDoubleJump = false;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpForce);
     }
 
     private void WallJump()
     {
-        isWallJumping = true;
+        canDoubleJump = true;
         rb.linearVelocity = new Vector2(wallJumpForce.x * -facingDir, wallJumpForce.y);
+
+        Flip();
+
+        StopAllCoroutines();
+        StartCoroutine(WallJumpRoutine());
+    }
+
+    private IEnumerator WallJumpRoutine()
+    {
+        isWallJumping = true;
+
+        yield return new WaitForSeconds(wallJumpDuration);
+
+        isWallJumping = false;
     }
 
     private void HandleCollision()
