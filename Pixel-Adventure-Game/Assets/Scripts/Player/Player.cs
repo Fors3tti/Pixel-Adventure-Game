@@ -14,9 +14,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float doubleJumpForce;
     public bool canDoubleJump;
 
-    [Header("Buffer Jump")]
+    [Header("Buffer & Coyote Jump")]
     [SerializeField] private float bufferJumpWindow = .25f;
     private float bufferJumpActivated = -1f;
+    [SerializeField] private float coyoteJumpWindow = .5f;
+    private float coyoteJumpActivated = -1f;
 
     [Header("Wall interactions")]
     [SerializeField] private float wallJumpDuration = .6f;
@@ -27,7 +29,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float knockbackDuration = 1f;
     [SerializeField] private Vector2 knockbackPower;
     private bool isKnocked;
-    private bool canBeKnocked;
 
     [Header("Collision info")]
     [SerializeField] private float groundCheckDistance;
@@ -97,6 +98,12 @@ public class Player : MonoBehaviour
     private void BecomeAirborne()
     {
         isAirborne = true;
+
+        if (rb.linearVelocity.y < 0)
+        {
+            Debug.Log("Activated Coyote Jump");
+            ActivateCoyoteJump();
+        }
     }
 
     private void HandleLanding()
@@ -129,15 +136,25 @@ public class Player : MonoBehaviour
     {
         if (Time.time < bufferJumpActivated + bufferJumpWindow)
         {
-            bufferJumpActivated = 0;
+            bufferJumpActivated = Time.time -1f;
             Jump();
         }
     }
 
+    private void ActivateCoyoteJump() => coyoteJumpActivated = Time.time;
+
+    private void CancelCoyoteJump() => coyoteJumpActivated = Time.time - 1f;
+
     private void JumpButton()
     {
-        if (isGrounded)
+        bool coyoteJumpAvailable = Time.time < coyoteJumpActivated + coyoteJumpWindow;
+
+        if (isGrounded || coyoteJumpAvailable)
         {
+            if (coyoteJumpAvailable)
+            {
+                Debug.Log("I've used coyote");
+            }
             Jump();
         }
         else if (isWallDetected && !isGrounded)
@@ -148,6 +165,8 @@ public class Player : MonoBehaviour
         {
             DoubleJump();
         }
+
+        CancelCoyoteJump();
     }
 
     private void Jump() => rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -180,12 +199,10 @@ public class Player : MonoBehaviour
 
     private IEnumerator KnockbackRoutine()
     {
-        canBeKnocked = false;
         isKnocked = true;
 
         yield return new WaitForSeconds(knockbackDuration);
 
-        canBeKnocked = true;
         isKnocked = false;
     }
 
