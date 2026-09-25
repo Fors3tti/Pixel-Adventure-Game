@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float doubleJumpForce;
     public bool canDoubleJump;
 
+    [Header("Buffer Jump")]
+    [SerializeField] private float bufferJumpWindow = .25f;
+    private float bufferJumpActivated = -1f;
+
     [Header("Wall interactions")]
     [SerializeField] private float wallJumpDuration = .6f;
     [SerializeField] private Vector2 wallJumpForce;
@@ -47,11 +51,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Knockback();
-        }
-
         UpdateAirbornStatus();
 
         if (isKnocked)
@@ -84,7 +83,6 @@ public class Player : MonoBehaviour
             return;
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * yModifier);
-        
     }
 
     private void UpdateAirbornStatus()
@@ -105,6 +103,8 @@ public class Player : MonoBehaviour
     {
         isAirborne = false;
         canDoubleJump = true;
+
+        AttemptBufferJump();
     }
 
     private void HandleInput()
@@ -113,7 +113,25 @@ public class Player : MonoBehaviour
         yInput = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKeyDown(KeyCode.X))
+        {
             JumpButton();
+            RequestBufferJump();
+        }
+    }
+
+    private void RequestBufferJump()
+    {
+        if (isAirborne)
+            bufferJumpActivated = Time.time;
+    }
+
+    private void AttemptBufferJump()
+    {
+        if (Time.time < bufferJumpActivated + bufferJumpWindow)
+        {
+            bufferJumpActivated = 0;
+            Jump();
+        }
     }
 
     private void JumpButton()
