@@ -15,18 +15,18 @@ public class Player : MonoBehaviour
     public bool canDoubleJump;
 
     [Header("Buffer & Coyote Jump")]
-    [SerializeField] private float bufferJumpWindow = .25f;
+    [SerializeField] private float bufferJumpWindow;
     private float bufferJumpActivated = -1f;
-    [SerializeField] private float coyoteJumpWindow = .5f;
+    [SerializeField] private float coyoteJumpWindow;
     private float coyoteJumpActivated = -1f;
 
     [Header("Wall interactions")]
-    [SerializeField] private float wallJumpDuration = .6f;
+    [SerializeField] private float wallJumpDuration;
     [SerializeField] private Vector2 wallJumpForce;
     private bool isWallJumping;
 
     [Header("Knockback")]
-    [SerializeField] private float knockbackDuration = 1f;
+    [SerializeField] private float knockbackDuration;
     [SerializeField] private Vector2 knockbackPower;
     private bool isKnocked;
 
@@ -148,7 +148,6 @@ public class Player : MonoBehaviour
 
         if (isGrounded || coyoteJumpAvailable)
         {
-            if (coyoteJumpAvailable)
             Jump();
         }
         else if (isWallDetected && !isGrounded)
