@@ -9359,6 +9359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 393917427}
+  fruitsHaveRandomLook: 0
   fruitsCollected: 0
 --- !u!1 &1882577944
 GameObject:
@@ -10866,6 +10867,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3557908324129950079, guid: 86077833081cbe441891e8d47695805d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255201998509163856, guid: 86077833081cbe441891e8d47695805d, type: 3}
+      propertyPath: fruitType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8588722022350142112, guid: 86077833081cbe441891e8d47695805d, type: 3}
