@@ -5,6 +5,7 @@ public enum FruitType { Apple, Banana, Cherry, Kiwi, Melon, Orange, Pineapple, S
 public class Fruit : MonoBehaviour
 {
     [SerializeField] private FruitType fruitType;
+    [SerializeField] private GameObject pickupVFX;
 
     private GameManager gameManager;
     private Animator anim;
@@ -42,6 +43,10 @@ public class Fruit : MonoBehaviour
         {
             gameManager.AddFruit();
             Destroy(gameObject);
+
+            GameObject newFx = Instantiate(pickupVFX, transform.position, Quaternion.identity);
+
+            Destroy(newFx, .5f);
         }
     }
 }

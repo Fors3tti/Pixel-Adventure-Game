@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitType: 0
+  pickupVFX: {fileID: 3565066040114984764, guid: 84f663eb864215444aa0e9b582271edf, type: 3}
 --- !u!58 &5725603901648938697
 CircleCollider2D:
   m_ObjectHideFlags: 0
