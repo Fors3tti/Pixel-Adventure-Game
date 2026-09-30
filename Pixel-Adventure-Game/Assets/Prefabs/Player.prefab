@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6076825349787444228}
   - component: {fileID: 3028226580753660683}
   - component: {fileID: 1178993437246811395}
+  - component: {fileID: 6174348316123007069}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -110,6 +111,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6174348316123007069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222601222221816936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c89cfedc0c25f4db071ae6d0f5d4cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7760555927769270553
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +237,6 @@ MonoBehaviour:
   moveSpeed: 10
   jumpForce: 12
   doubleJumpForce: 10
-  canDoubleJump: 1
   bufferJumpWindow: 0.25
   coyoteJumpWindow: 0.25
   wallJumpDuration: 0.6
