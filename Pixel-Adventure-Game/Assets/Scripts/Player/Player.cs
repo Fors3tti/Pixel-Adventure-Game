@@ -84,6 +84,8 @@ public class Player : MonoBehaviour
         isKnocked = false;
     }
 
+    public void Die() => Destroy(gameObject);
+
     private void UpdateAirbornStatus()
     {
         if (isGrounded && isAirborne)
