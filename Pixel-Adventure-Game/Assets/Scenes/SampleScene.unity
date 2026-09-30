@@ -9525,6 +9525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 7760555927769270553, guid: b0038635b4c137a44b0254714c8a4c63, type: 3}
   respawnPoint: {fileID: 1651692254}
+  respawnDelay: 1
   player: {fileID: 393917427}
   fruitsHaveRandomLook: 0
   fruitsCollected: 0
