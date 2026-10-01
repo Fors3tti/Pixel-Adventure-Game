@@ -11468,6 +11468,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2626611705783407639, guid: b0038635b4c137a44b0254714c8a4c63, type: 3}
+      propertyPath: wallJumpDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4637329999128842386, guid: b0038635b4c137a44b0254714c8a4c63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.25
