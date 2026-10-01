@@ -47,6 +47,9 @@ TagManager:
   - name: Bricks
     uniqueID: 1025160267
     locked: 0
+  - name: Traps
+    uniqueID: 1904901767
+    locked: 0
   - name: Ground
     uniqueID: 222268563
     locked: 0
