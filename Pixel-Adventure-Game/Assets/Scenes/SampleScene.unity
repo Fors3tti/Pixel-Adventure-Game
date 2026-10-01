@@ -9764,6 +9764,63 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &1739787945
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063119766847049759, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917013591679433505, guid: bbd5317104d31454b99568ff7e374484, type: 3}
+      propertyPath: m_Name
+      value: CherryFruit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbd5317104d31454b99568ff7e374484, type: 3}
 --- !u!1 &1758642004
 GameObject:
   m_ObjectHideFlags: 0
@@ -9812,8 +9869,10 @@ MonoBehaviour:
   respawnPoint: {fileID: 170477056}
   respawnDelay: 1
   player: {fileID: 393917427}
-  fruitsHaveRandomLook: 0
+  fruitsAreRandom: 0
   fruitsCollected: 0
+  totalFruits: 0
+  allFruits: []
 --- !u!1 &1882577944
 GameObject:
   m_ObjectHideFlags: 0
@@ -11332,6 +11391,7 @@ SceneRoots:
   - {fileID: 724915543}
   - {fileID: 4483063931781377695}
   - {fileID: 1490582588}
+  - {fileID: 1739787945}
   - {fileID: 1046552291}
   - {fileID: 1528833339}
   - {fileID: 1651692254}
