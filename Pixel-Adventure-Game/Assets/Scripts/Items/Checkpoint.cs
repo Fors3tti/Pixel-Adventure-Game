@@ -20,5 +20,6 @@ public class Checkpoint : MonoBehaviour
     {
         active = true;
         anim.SetBool("activate", active);
+        GameManager.instance.UpdateRespawnPosition(transform);
     }
 }
