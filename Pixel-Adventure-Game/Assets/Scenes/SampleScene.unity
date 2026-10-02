@@ -7014,7 +7014,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.0283804, y: -0.87668276}
+  m_Offset: {x: -0.45713234, y: -0.87668276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7024,7 +7024,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1396694, y: 2.2466345}
+  m_Size: {x: 2.2821655, y: 2.2466345}
   m_EdgeRadius: 0
 --- !u!114 &1651692257
 MonoBehaviour:
@@ -11441,6 +11441,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0038635b4c137a44b0254714c8a4c63, type: 3}
+--- !u!1001 &7330933294305587885
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7979062421980707322, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_Name
+      value: Trap_SpikedBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523256366399244991, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c54a6777bfea6c247b3a0bf6c0545a86, type: 3}
 --- !u!1001 &8771923330238913529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11516,3 +11573,4 @@ SceneRoots:
   - {fileID: 486632340}
   - {fileID: 8771923330238913529}
   - {fileID: 1574232975309894832}
+  - {fileID: 7330933294305587885}
