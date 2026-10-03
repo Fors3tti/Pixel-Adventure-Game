@@ -2,26 +2,36 @@ using UnityEngine;
 
 public class EnemyMushroom : Enemy
 {
-    protected override void Awake()
+
+    protected override void Update()
     {
-        base.Awake();
+        base.Update();
 
-
-    }
-
-    private void Update()
-    {
         anim.SetFloat("xVelocity", rb.linearVelocity.x);
 
-        HandleMovement();
         HandleCollision();
+        HandleMovement();
 
-        if (!isGroundDetected || isWallDetected)
+        if (isGrounded)
+            HandleTurnAround();
+    }
+
+    private void HandleTurnAround()
+    {
+        if (!isGroundInFrontDetected || isWallDetected)
+        {
             Flip();
+            idleTimer = idleDuration;
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     private void HandleMovement()
     {
+        if (idleTimer > 0)
+            return;
+
         rb.linearVelocity = new Vector2(moveSpeed * facingDir, rb.linearVelocity.y);
     }
+
 }
