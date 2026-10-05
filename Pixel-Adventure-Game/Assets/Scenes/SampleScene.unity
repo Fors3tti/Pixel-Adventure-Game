@@ -848,8 +848,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc10dbf38260864d9ddfddec6080048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTrigger: {fileID: 452589092}
   moveSpeed: 4
   idleDuration: 1.5
+  deathImpact: 5
+  deathRotationSpeed: 160
   groundCheckDistance: 1.125
   wallCheckDistance: 0.85
   whatIsGround:
