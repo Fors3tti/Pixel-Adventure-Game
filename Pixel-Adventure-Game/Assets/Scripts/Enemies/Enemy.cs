@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     protected Animator anim;
     protected Rigidbody2D rb;
+    protected Collider2D col;
 
     [SerializeField] protected GameObject damageTrigger;
     [Space]
@@ -34,6 +35,7 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
     }
 
     protected virtual void Update()
@@ -46,6 +48,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die()
     {
+        col.enabled = false;
         damageTrigger.SetActive(false);
         anim.SetTrigger("hit");
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, deathImpactSpeed);
