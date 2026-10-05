@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -140,8 +140,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 65
-        height: 25
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: Hit (32x34)_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 0
-        width: 33
-        height: 27
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: Hit (32x34)_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 64
         y: 0
         width: 32
-        height: 28
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Hit (32x34)_3
       rect:
         serializedVersion: 2
-        x: 129
+        x: 96
         y: 0
-        width: 30
-        height: 32
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,11 +222,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Hit (32x34)_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e98c077272800d48b7c94f8b7085f77
+      internalID: -348133320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 910a34abc03d3c34e901665ee219ed48
     internalID: 0
     vertices: []
     indices: 
@@ -240,6 +262,7 @@ TextureImporter:
       Hit (32x34)_1: -4039234224601463810
       Hit (32x34)_2: 1102757246451432419
       Hit (32x34)_3: 5161840587998983807
+      Hit (32x34)_4: -348133320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
