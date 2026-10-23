@@ -326,7 +326,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.018994808, y: -0.09467125}
+  m_Offset: {x: -0.029594421, y: -0.18299675}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -336,7 +336,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7644682, y: 1.9356575}
+  m_Size: {x: 1.5736847, y: 1.7590065}
   m_EdgeRadius: 0
 --- !u!114 &308266844
 MonoBehaviour:
@@ -365,9 +365,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   groundCheck: {fileID: 805050949}
-  aggroDuration: 3
-  playerDetected: 0
-  detectionRange: 7.5
+  aggroDuration: 4
+  detectionRange: 8
 --- !u!114 &393917427 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2626611705783407639, guid: b0038635b4c137a44b0254714c8a4c63, type: 3}

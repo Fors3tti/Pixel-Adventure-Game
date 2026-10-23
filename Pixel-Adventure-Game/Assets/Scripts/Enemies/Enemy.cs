@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected Transform player;
     [SerializeField] protected GameObject damageTrigger;
-    [Space]
+
+    [Header("General info")]
     [SerializeField] protected float moveSpeed = 4f;
     [SerializeField] protected float idleDuration = 1.5f;
     protected float idleTimer;
