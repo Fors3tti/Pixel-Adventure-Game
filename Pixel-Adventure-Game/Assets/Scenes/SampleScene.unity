@@ -11065,7 +11065,7 @@ Transform:
   m_GameObject: {fileID: 3621992014535394282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.85, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11271,6 +11271,7 @@ GameObject:
   - component: {fileID: 4304205772066775466}
   - component: {fileID: 5806432876214782120}
   - component: {fileID: 2735162834664654067}
+  - component: {fileID: 5806432876214782121}
   m_Layer: 6
   m_Name: Enemy_Rino
   m_TagString: Untagged
@@ -11419,6 +11420,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3392725, y: 1.5557957}
   m_EdgeRadius: 0
+--- !u!114 &5806432876214782121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230324796893548861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cf8ecd0c5f478429acb236856d4295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  damageTrigger: {fileID: 392720440187116145}
+  moveSpeed: 5
+  idleDuration: 1.5
+  deathImpactSpeed: 5
+  deathRotationSpeed: 150
+  groundCheckDistance: 1.2
+  wallCheckDistance: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundCheck: {fileID: 1135119046178268059}
+  maxSpeed: 8
+  speedUpRate: 1.5
+  impactPower: {x: 3, y: 4}
+  detectionRange: 7.5
 --- !u!114 &5973828714186252594
 MonoBehaviour:
   m_ObjectHideFlags: 0
