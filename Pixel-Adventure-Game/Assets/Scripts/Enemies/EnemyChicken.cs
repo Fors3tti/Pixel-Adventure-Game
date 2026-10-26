@@ -71,7 +71,6 @@ public class EnemyChicken : Enemy
     protected override void Flip()
     {
         base.Flip();
-
         canFlip = true;
     }
 
