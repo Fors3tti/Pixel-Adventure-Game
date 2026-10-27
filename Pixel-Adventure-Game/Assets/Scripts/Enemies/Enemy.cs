@@ -3,12 +3,10 @@ using UnityEngine.Windows;
 
 public class Enemy : MonoBehaviour
 {
+    protected Transform player;
     protected Animator anim;
     protected Rigidbody2D rb;
-    protected Collider2D col;
-
-    [SerializeField] protected Transform player;
-    [SerializeField] protected GameObject damageTrigger;
+    protected Collider2D[] colliders;
 
     [Header("General info")]
     [SerializeField] protected float moveSpeed = 4f;
@@ -39,7 +37,7 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
+        colliders = GetComponentsInChildren<Collider2D>();
     }
 
     protected virtual void Start()
@@ -63,8 +61,11 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die()
     {
-        col.enabled = false;
-        damageTrigger.SetActive(false);
+        foreach (var collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        
         anim.SetTrigger("hit");
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, deathImpactSpeed);
         isDead = true;
