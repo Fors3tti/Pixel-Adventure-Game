@@ -69,7 +69,16 @@ public class EnemyChicken : Enemy
     protected override void Flip()
     {
         base.Flip();
+
         canFlip = true;
+    }
+
+    protected override void HandleCollision()
+    {
+        base.HandleCollision();
+
+        playerDetected = Physics2D.Raycast(
+            transform.position, Vector2.right * facingDir, detectionRange, whatIsPlayer);
     }
 
 }

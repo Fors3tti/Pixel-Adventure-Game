@@ -200,8 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8093d5ed6c0254abe6d2af564f3f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  damageTrigger: {fileID: 6541490626784772615}
   moveSpeed: 6
   idleDuration: 1.5
   deathImpactSpeed: 5
@@ -211,6 +209,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  playerDetectionDistance: 5
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
@@ -242,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 3875056433989295420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -0.989, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -259,7 +258,7 @@ GameObject:
   - component: {fileID: 6053550667743147584}
   - component: {fileID: 5053793352890597758}
   - component: {fileID: 9207220541331942722}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DamageTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
