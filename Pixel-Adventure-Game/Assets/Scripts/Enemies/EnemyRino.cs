@@ -8,8 +8,6 @@ public class EnemyRino : Enemy
     [SerializeField] private float speedUpRate;
     private float defaultSpeed;
     [SerializeField] private Vector2 impactPower;
-    [SerializeField] private float detectionRange;
-    private bool playerDetected;
 
     protected override void Start()
     {
@@ -22,9 +20,6 @@ public class EnemyRino : Enemy
     {
         base.Update();
 
-        anim.SetFloat("xVelocity", rb.linearVelocity.x);
-
-        HandleCollision();
         HandleCharge();
     }
 
@@ -33,10 +28,7 @@ public class EnemyRino : Enemy
         if (canMove == false)
             return;
 
-        moveSpeed = moveSpeed + (Time.deltaTime * speedUpRate);
-
-        if (moveSpeed >= maxSpeed)
-            maxSpeed = moveSpeed;
+        HandleSpeedUp();
 
         rb.linearVelocity = new Vector2(moveSpeed * facingDir, rb.linearVelocity.y);
 
@@ -47,9 +39,17 @@ public class EnemyRino : Enemy
             TurnAround();
     }
 
+    private void HandleSpeedUp()
+    {
+        moveSpeed = moveSpeed + (Time.deltaTime * speedUpRate);
+
+        if (moveSpeed >= maxSpeed)
+            maxSpeed = moveSpeed;
+    }
+
     private void TurnAround()
     {
-        moveSpeed = defaultSpeed;
+        SpeedReset();
         canMove = false;
         rb.linearVelocity = Vector2.zero;
         Flip();
@@ -58,9 +58,14 @@ public class EnemyRino : Enemy
     private void WallHit()
     {
         canMove = false;
-        moveSpeed = defaultSpeed;
+        SpeedReset();
         anim.SetBool("hitWall", true);
         rb.linearVelocity = new Vector2(impactPower.x * -facingDir, impactPower.y);
+    }
+
+    private void SpeedReset()
+    {
+        moveSpeed = defaultSpeed;
     }
 
     private void ChargeIsOver()
@@ -73,18 +78,8 @@ public class EnemyRino : Enemy
     {
         base.HandleCollision();
 
-        playerDetected = Physics2D.Raycast(
-            transform.position, Vector2.right * facingDir, detectionRange, whatIsPlayer);
-
-        if (playerDetected && isGrounded)
+        if (isPlayerDetected && isGrounded)
             canMove = true;
     }
 
-    protected override void OnDrawGizmos()
-    {
-        base.OnDrawGizmos();
-
-        Gizmos.DrawLine(transform.position, new Vector2(
-            transform.position.x + (detectionRange * facingDir), transform.position.y));
-    }
 }
