@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,19 +132,19 @@ TextureImporter:
       name: Bullet Pieces_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 5
-        width: 9
-        height: 6
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5230bcd8ed1980c80800000000000000
+      spriteID: 54fe9031cbb29dd4288b3d46a63b06e2
       internalID: -8356268723538296027
       vertices: []
       indices: 
@@ -154,19 +154,19 @@ TextureImporter:
       name: Bullet Pieces_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 5
-        width: 9
-        height: 6
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e07a7c8fc43ae550800000000000000
+      spriteID: 9d5c82c355a5d0b469f681a4eeb80e87
       internalID: 6190818703793877225
       vertices: []
       indices: 
@@ -176,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8fd8ebafd8e03354cac1436702408607
     internalID: 0
     vertices: []
     indices: 
