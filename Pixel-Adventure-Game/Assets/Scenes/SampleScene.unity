@@ -11048,7 +11048,7 @@ Transform:
   m_GameObject: {fileID: 3230324798100301078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -4, z: 0}
+  m_LocalPosition: {x: 10, y: -4.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11271,6 +11271,7 @@ GameObject:
   - component: {fileID: 4304205770857600385}
   - component: {fileID: 5806432875543805059}
   - component: {fileID: 2735162833726025944}
+  - component: {fileID: 5806432875543805060}
   m_Layer: 6
   m_Name: Enemy_Plant
   m_TagString: Untagged
@@ -11304,7 +11305,7 @@ Animator:
   m_GameObject: {fileID: 3230324798100301078}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dd4dc1a6d39e2f84ea54c75ea85e59c2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 09afc1d049fdba1488921748af55ea2c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11423,6 +11424,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6220722, y: 2.1310332}
   m_EdgeRadius: 0
+--- !u!114 &5806432875543805060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230324798100301078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cce1b1e05d3ed4ab661c61d394d832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5973828714856125721
 MonoBehaviour:
   m_ObjectHideFlags: 0
