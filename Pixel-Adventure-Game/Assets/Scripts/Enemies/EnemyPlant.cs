@@ -1,16 +1,29 @@
 using UnityEngine;
 
-public class EnemyPlant : MonoBehaviour
+public class EnemyPlant : Enemy
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Plant details")]
+    [SerializeField] private float attackCooldown = 1.5f;
+    public float lastTimeAttacked;
+
+    protected override void Update()
     {
-        
+        base.Update();
+
+        bool canAttack = Time.time > lastTimeAttacked + attackCooldown;
+
+        if (isPlayerDetected && canAttack)
+            Attack();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Attack()
     {
-        
+        lastTimeAttacked = Time.time;
+        anim.SetTrigger("attack");
+    }
+
+    protected override void HandleAnimator()
+    {
+        //Keep empty
     }
 }

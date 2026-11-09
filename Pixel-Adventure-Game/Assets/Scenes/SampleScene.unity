@@ -11436,6 +11436,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0cce1b1e05d3ed4ab661c61d394d832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 4
+  idleDuration: 1.5
+  deathImpactSpeed: 5
+  deathRotationSpeed: 150
+  groundCheckDistance: 1.325
+  wallCheckDistance: 0.7
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  playerDetectionDistance: 7.5
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundCheck: {fileID: 1135119047652988848}
 --- !u!114 &5973828714856125721
 MonoBehaviour:
   m_ObjectHideFlags: 0
