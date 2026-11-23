@@ -23,7 +23,7 @@ public class EnemyBullet : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer(groundLayerName))
         {
-            Destroy(gameObject);
+            Destroy(gameObject, .05f);
         }
     }
 }

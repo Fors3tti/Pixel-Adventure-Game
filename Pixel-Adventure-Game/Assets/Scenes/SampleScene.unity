@@ -11482,7 +11482,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   groundCheck: {fileID: 1135119047652988848}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 3932033281078310344, guid: 41eb398d10968284684679aeebb4edb0, type: 3}
   gunPoint: {fileID: 1208419607}
   bulletSpeed: 7
   attackCooldown: 1.5
