@@ -2,15 +2,28 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private string playerLayerName = "Player";
+    [SerializeField] private string groundLayerName = "Ground";
+    private Rigidbody2D rb;
+
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetVelocity(Vector2 velocity) => rb.linearVelocity = velocity;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.layer == LayerMask.NameToLayer(playerLayerName))
+        {
+            collision.GetComponent<Player>().Knockback(transform.position.x);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer(groundLayerName))
+        {
+            Destroy(gameObject);
+        }
     }
 }
