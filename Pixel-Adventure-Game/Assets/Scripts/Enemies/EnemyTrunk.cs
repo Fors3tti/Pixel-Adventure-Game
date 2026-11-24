@@ -29,7 +29,7 @@ public class EnemyTrunk : Enemy
 
     private void Attack()
     {
-        idleTimer = idleDuration;
+        idleTimer = idleDuration + attackCooldown;
         lastTimeAttacked = Time.time;
         anim.SetTrigger("attack");
     }
