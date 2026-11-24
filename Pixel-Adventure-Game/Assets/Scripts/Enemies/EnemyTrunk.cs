@@ -41,6 +41,9 @@ public class EnemyTrunk : Enemy
         Vector2 bulletVelocity = new Vector2(facingDir * bulletSpeed, 0);
         newBullet.SetVelocity(bulletVelocity);
 
+        if (facingDir == 1)
+            newBullet.FlipSprite();
+
         Destroy(newBullet.gameObject, 10);
     }
 
