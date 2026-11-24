@@ -656,6 +656,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a4348b900ff58344b928e8d48d7059a, type: 3}
+--- !u!1 &1242022867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242022868}
+  m_Layer: 6
+  m_Name: GunPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1242022868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242022867}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.15, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1110327102349870568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1490582588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11048,7 +11079,7 @@ Transform:
   m_GameObject: {fileID: 3856719658133146022}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.85, y: 0, z: 0}
+  m_LocalPosition: {x: -0.945, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11069,6 +11100,7 @@ Transform:
   m_Children:
   - {fileID: 578418253674162647}
   - {fileID: 6845414556876874452}
+  - {fileID: 1242022868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2059921061400805034
@@ -11271,6 +11303,7 @@ GameObject:
   - component: {fileID: 4358825609512365030}
   - component: {fileID: 6292271380449411812}
   - component: {fileID: 2464441579233627839}
+  - component: {fileID: 6292271380449411813}
   m_Layer: 6
   m_Name: Enemy_Trunk
   m_TagString: Untagged
@@ -11435,6 +11468,36 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2550459, y: 1.537746}
   m_EdgeRadius: 0
+--- !u!114 &6292271380449411813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103648499277503345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaff5ae49d21c747a2bfb9447eb3833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  idleDuration: 1.5
+  deathImpactSpeed: 5
+  deathRotationSpeed: 150
+  groundCheckDistance: 1.1
+  wallCheckDistance: 1.55
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  playerDetectionDistance: 7.5
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundCheck: {fileID: 578418253674162647}
+  bulletPrefab: {fileID: 0}
+  gunPoint: {fileID: 1242022868}
+  bulletSpeed: 7
+  attackCooldown: 1.5
 --- !u!4 &6845414556876874452
 Transform:
   m_ObjectHideFlags: 0
