@@ -84,6 +84,8 @@ public class Enemy : MonoBehaviour
 
         if (Random.Range(0, 100) < 50)
             deathRotationDirection = deathRotationDirection * -1;
+
+        Destroy(gameObject, 10);
     }
 
     private void HandleDeathRotation()

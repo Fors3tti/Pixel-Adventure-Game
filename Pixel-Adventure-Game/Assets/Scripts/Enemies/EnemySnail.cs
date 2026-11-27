@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class EnemySnail : Enemy
 {
-    public bool hasBody = true;
+    [Header("Snail details")]
+    [SerializeField] private EnemySnailBody bodyPrefab;
+    [SerializeField] private float maxSpeed = 10f;
+    private bool hasBody = true;
 
     protected override void Update()
     {
@@ -28,6 +31,12 @@ public class EnemySnail : Enemy
             rb.linearVelocity = Vector2.zero;
             idleDuration = 0;
         }
+        else if (canMove == false && hasBody == false)
+        {
+            anim.SetTrigger("hit");
+            canMove = true;
+            moveSpeed = maxSpeed;
+        }
         else
         {
             base.Die();
@@ -36,7 +45,7 @@ public class EnemySnail : Enemy
 
     private void HandleTurnAround()
     {
-        if (!isGroundInFrontDetected || isWallDetected)
+        if (!isGroundInFrontDetected && hasBody || isWallDetected)
         {
             Flip();
             idleTimer = idleDuration;
@@ -53,5 +62,25 @@ public class EnemySnail : Enemy
             return;
 
         rb.linearVelocity = new Vector2(moveSpeed * facingDir, rb.linearVelocity.y);
+    }
+
+    private void CreateBody()
+    {
+        EnemySnailBody newBody = Instantiate(bodyPrefab, transform.position, Quaternion.identity);
+
+        if (Random.Range(0, 100) < 50)
+            deathRotationDirection = deathRotationDirection * -1;
+
+        newBody.SetupBody(deathImpactSpeed, deathRotationSpeed * deathRotationDirection, facingDir);
+
+        Destroy(newBody.gameObject, 10);
+    }
+
+    protected override void Flip()
+    {
+        base.Flip();
+
+        if (hasBody == false)
+            anim.SetTrigger("wallHit");
     }
 }
