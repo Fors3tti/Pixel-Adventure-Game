@@ -13,6 +13,7 @@ public class EnemyRino : Enemy
     {
         base.Start();
 
+        canMove = false;
         defaultSpeed = moveSpeed;
     }
 
